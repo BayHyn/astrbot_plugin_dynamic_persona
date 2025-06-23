@@ -1,0 +1,32 @@
+{
+    "enabled": {
+        "type": "bool",
+        "title": "启用动态人格插件",
+        "description": "控制整个插件的开关。",
+        "default": true
+    },
+    "update_frequency": {
+        "type": "int",
+        "title": "人格更新频率（消息条数）",
+        "description": "每隔多少条消息，机器人的性格就可能发生一次变化。设置为 1 则每条消息都变。",
+        "default": 1
+    },
+    "include_time": {
+        "type": "bool",
+        "title": "在情景中包含当前时间",
+        "description": "允许插件将当前时间作为生成人格的参考因素之一，让 Bot 产生昼夜、工作日/周末等不同状态。",
+        "default": true
+    },
+    "persona_provider_id": {
+        "type": "string",
+        "title": "人格生成专用LLM提供商ID (可选)",
+        "description": "（高级）指定一个用于生成人格的特定LLM。可选用更轻量、快速或廉价的模型来降低成本。留空则使用当前会话的主LLM。",
+        "default": ""
+    },
+    "custom_generation_prompt": {
+        "type": "text",
+        "title": "自定义人格生成指令",
+        "description": "自定义用于生成人格的系统指令。你可以通过修改它，来控制人格生成的风格。必须包含 {context_info} 占位符。",
+        "default": "你是一个创意总监，你的任务是根据我提供的情景信息，用一句话创造性地描述一个独特且有趣的角色人格（System Prompt）。你必须只返回这一句话的人格描述，不要包含任何其他解释或多余的文字。\n\n情景信息如下：\n{context_info}"
+    }
+}
